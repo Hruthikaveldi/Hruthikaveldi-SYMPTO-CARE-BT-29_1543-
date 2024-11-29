@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8f9;
+    color: #333;
+}
+
+.header {
+    background-color: #27ae60;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.pharmacy__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+}
+
+.pharmacy__card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pharmacy__card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.pharmacy__card h4 {
+    font-size: 18px;
+    color: #27ae60;
+}
+
+.pharmacy__card p {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.pharmacy__card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 10px 0;
+}
+
+.pharmacy__card button {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.pharmacy__card button:hover {
+    background-color: #2ecc71;
+}
+
+.pharmacy__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}

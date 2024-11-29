@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SymptoCare - Symptom Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+   
+    <style>
+        /* Basic Reset for margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Full height of the viewport */
+        }
+       
+
+       
+
+        /* Main content Styles */
+        main {
+            flex: 1; /* Take the remaining space */
+            padding: 20px;
+        }
+
+       
+        .back-menu {
+        display: inline-block;
+        margin: 2px;
+        padding: 1px 2px;
+        background-color: #2e4c78; /* Matches navbar color */
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: left;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-menu:hover {
+        background-color: #243b58; /* Slightly darker shade for hover */
+        transform: translateY(-3px); /* Adds a lift effect */
+    }
+
+
+
+    header {
+            background-image: linear-gradient(
+                    to right,
+                    rgba(18, 172, 142, 0.9),
+                    rgba(18, 172, 142, 0.7)
+                ),
+                url("assets/header.jpg"); /* Replace with the correct image path */
+            background-position: center center; /* Center the image */
+            background-size: cover; /* Cover the entire header area */
+            background-repeat: no-repeat; /* Prevent repetition */
+            text-align: center; /* Center the text */
+            color: #ffffff; /* White text for visibility */
+            padding: 50px 20px; /* Add spacing inside the header */
+            font-family: Arial, sans-serif; /* Optional font */
+        }
+
+        header h1 {
+            font-size: 3rem; /* Adjust title size */
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5rem; /* Adjust subtitle size */
+        }
+
+
+    </style>
+</head>
+
+    
+    
+  
+
+<body>
+
+
+   
+    <h1 style="text-align: center;">SYMPTO-CARE SYMPTOM CHECKER </h1>
+    <!-- Main content -->
+    <a href="index.html" class="back-menu">Back to Menu</a>
+    <main>
+        <section id="questionnaire">
+            <h2>Select Symptoms</h2>
+            <p>Choose symptoms that you are experiencing:</p>
+            <div id="symptom-list">
+                <!-- Dynamically populated symptom checkboxes -->
+            </div>
+            <button id="analyze-btn">Analyze Symptoms</button>
+        </section>
+
+        <section id="results" style="display: none;">
+            <h2>Possible Diseases</h2>
+            <div id="result-list">
+                <!-- Results will be displayed here -->
+            </div>
+            <button id="reset-btn">Reset</button>
+        </section>
+    </main>
+
+   
+    <!-- JavaScript for Survey -->
+    <script>
+        function submitSurvey() {
+            const fever = document.querySelector('input[name="fever"]:checked');
+            const headache = document.querySelector('input[name="headache"]:checked');
+            const fatigue = document.querySelector('input[name="fatigue"]:checked');
+
+            if (fever && fever.value === "Yes" &&
+                headache && headache.value.startsWith("Yes") &&
+                fatigue && fatigue.value.startsWith("Yes")) {
+                alert("You may be suffering from typhoid fever. Please consult a doctor.");
+            } else {
+                alert("Thank you for completing the survey. Based on your answers, it does not indicate typhoid symptoms. However, if you feel unwell, please see a doctor.");
+            }
+        }
+    </script>
+
+    <a href="index.html">Back to menu</a>
+    <script src="script-analyzer.js"></script>
+</body>
+
+</html>

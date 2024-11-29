@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="articles.css">
+    <title>Full Article</title>
+</head>
+<body>
+    <div id="full-article-content"></div>
+
+    <script>
+        const articles = [
+            {
+                id: '1',
+                title: 'The Rise of Preventive Healthcare: How Indians Are Embracing Wellness',
+                image: 'article-1.jpeg',
+                body: `
+                    <p>In recent years, India has witnessed a significant shift in its healthcare landscape, moving from reactive treatments to preventive healthcare. This paradigm shift is fueled by rising health awareness, urbanization, and access to digital tools that make health management easier and more proactive.</p>
+                    <p>Increased Focus on Lifestyle Changes: Indians are now more informed about the importance of maintaining a balanced lifestyle. The urban population, in particular, is investing in preventive health measures such as regular exercise, balanced diets, and stress management practices. Gyms, yoga centers, and meditation classes have become an integral part of many routines.</p>
+                    <p>The Role of Technology: The surge in health-tech startups has enabled people to access health services and information at their fingertips. Apps like HealthifyMe and GOQii provide personalized diet plans, fitness tracking, and consultations, pushing the preventive care movement forward.</p>
+                    <p>Wearable Health Technology: The popularity of smartwatches and fitness trackers has exploded, encouraging individuals to monitor their physical activity, heart rate, and sleep patterns in real-time.</p>
+                    <p>With the rise of lifestyle diseases, the trend toward preventive care will continue to expand. India is setting a precedent for how ancient practices can be integrated with modern wellness strategies, making health a priority before illness strikes.</p>
+                `
+            },
+            {
+                id: '2',
+                title: 'Ayurveda and Modern Medicine: Integrating the Best of Both Worlds',
+                image: 'article-2.jpeg',
+                body: `
+                    <p>Ayurveda, with a history stretching back thousands of years, is experiencing a modern renaissance. Today, there is a growing trend in India to blend this traditional system with allopathic medicine for comprehensive healthcare solutions.</p>
+                    <p>The Holistic Approach: Unlike conventional medicine, which often focuses on symptom suppression, Ayurveda addresses the root cause of illnesses. This approach is being welcomed by those looking for long-term solutions, particularly for chronic diseases such as arthritis, diabetes, and digestive issues.</p>
+                    <p>Collaborative Treatments: Hospitals and private clinics in cities like Mumbai and Bangalore are beginning to offer integrative treatments. For example, an arthritis patient might receive allopathic treatment for pain management while simultaneously undergoing Ayurvedic therapies to improve joint health.</p>
+                    <p>Government Support: The Indian government has launched several initiatives to promote Ayurveda, including setting up dedicated research centers and encouraging medical practitioners to pursue dual certifications.</p>
+                    <p>The fusion of Ayurveda and modern medicine is providing patients with more comprehensive care options. This integrated approach is a testament to India’s capacity to innovate by leveraging its rich traditional knowledge alongside cutting-edge medical advances.</p>
+                `
+            },
+            {
+                id: '3',
+                title: 'Mental Health Awareness: Breaking the Stigma in India',
+                image: 'article-3.jpeg',
+                body: `
+                    <p>Mental health has long been a taboo topic in India, but recent years have marked a shift as people start to acknowledge its importance. A growing number of Indians, especially younger generations, are actively seeking support for their mental well-being.</p>
+                    <p>Awareness Campaigns and Initiatives: Both governmental and non-governmental organizations have launched campaigns to educate the public and promote mental health. Online campaigns and public service announcements play a crucial role in spreading awareness.</p>
+                    <p>Access to Counseling Services: Platforms like BetterLYF and YourDOST offer accessible online counseling, allowing people to reach out for help without fear of judgment. Teletherapy has gained momentum, making mental health services more approachable.</p>
+                    <p>Remaining Challenges: Despite progress, mental health awareness remains limited in rural areas where stigmas still hold strong. Addressing these disparities requires grassroots education and outreach programs.</p>
+                    <p>While significant progress has been made in promoting mental health awareness, continuous efforts are needed to break the remaining stigmas and ensure mental health support is available across India.</p>
+                `
+            },
+            {
+                id:'4',
+                title:'Plant-Based Diets: The New Health Trend in Urban India',
+                image: 'article-4.jpg',
+                body:`
+                    <p>The wave of plant-based diets has caught on in India, driven by health, ethical, and environmental reasons. The movement is gaining traction among the urban population, aligning well with traditional Indian eating habits.</p>
+                    <p>Plant-based diets are known for their numerous health benefits, including better heart health and reduced risks of chronic diseases. Cities like Delhi and Bangalore have seen a rise in vegan and vegetarian restaurants catering to this shift.</p>
+                    <p>Plant-Based Products and Startups: Companies like GoodDot and Veggie Champ are making plant-based meat alternatives easily accessible. These products mimic the taste and texture of traditional meats, appealing to consumers who want to make the transition without sacrificing familiar flavors.</p>
+                    <p>Challenges: Despite the trend, there are concerns about protein intake and nutrient balance among those adopting these diets. Nutritionists emphasize the importance of careful planning to meet dietary needs.</p>
+                    <p>The plant-based diet trend is transforming the Indian food landscape, merging health consciousness with traditional food practices. This shift is likely to continue, driven by both consumer demand and increased environmental awareness.</p>
+                    `
+            },
+            {
+                id:'5',
+                title:'India’s Battle with Diabetes and Lifestyle Diseases',
+                image: 'article-5.jpg',
+                body:`
+                <p>India is facing a growing challenge with the rise of diabetes, obesity, and other lifestyle diseases. Changing diets, sedentary habits, and high-stress levels have all contributed to this trend.</p>
+                <p>The Statistics: India has one of the highest numbers of diabetics in the world, with projections showing continued growth. Younger age groups are increasingly being affected, pointing to lifestyle choices as a significant factor.</p>
+                <p>Government and Community Efforts: Campaigns such as Fit India Movement aim to combat this trend by encouraging physical activity and healthier eating. Public health experts are also working on creating more awareness about lifestyle changes that can prevent these conditions.</p>
+                <p>Urban vs. Rural Disparities: While urban areas face lifestyle diseases due to fast food and sedentary lifestyles, rural areas are not immune, with rising cases linked to limited access to preventive care and poor dietary habits.</p>
+                <p>Addressing lifestyle diseases in India requires a multifaceted approach, including education, accessible healthcare, and active community involvement. Preventive measures and lifestyle adjustments will be key to managing and reducing the burden of these conditions.</p>
+                `
+            },
+            {
+                id:'6',
+                title:'The Role of Technology in Shaping India’s Healthcare Future',
+                image: 'article-6.jpg',
+                body:`
+                <p>Technology has become a vital force in reshaping the Indian healthcare system, bridging gaps and making medical services more efficient and widespread.</p>
+                <p>Telemedicine and Accessibility: With the growth of telemedicine platforms such as Practo and mFine, patients can consult doctors remotely, reducing the strain on in-person facilities and providing essential care to those in remote areas.</p>
+                <p>AI in Diagnostics: AI-based tools are now being employed for early disease detection and better diagnostic accuracy. For instance, AI algorithms are used in mammography to detect early signs of breast cancer, improving treatment outcomes.</p>
+                <p>Wearable Technology and Remote Monitoring: The adoption of wearable health devices enables users to keep track of vital statistics such as heart rate, blood pressure, and blood glucose levels. These devices not only empower users but also help doctors monitor chronic conditions more effectively.</p>
+                <p>The integration of technology in healthcare is set to revolutionize how Indians access and manage their health. With continued advancements, these tools have the potential to enhance quality care and bring health services to even the most remote corners of the country.</p>
+                `
+            }
+
+            // Add more articles as needed
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const articleId = params.get('article');
+        const fullArticleContent = document.getElementById("full-article-content");
+
+        const article = articles.find(a => a.id === articleId);
+
+        if (article) {
+            fullArticleContent.innerHTML = `
+                <h1>${article.title}</h1>
+                <img src="${article.image}" alt="${article.title}" class="article-image">
+                ${article.body}
+                <button onclick="window.location.href='article.html'">Back to Articles</button>
+            `;
+        } else {
+            fullArticleContent.innerHTML = "<p>Article not found.</p>";
+        }
+    </script>
+</body>
+</html>

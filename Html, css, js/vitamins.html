@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Vitamins & Supplements</title>
+    <link rel="stylesheet" href="vitamins-style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="section_container nav_container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="symptom.html">Symptom Analyzer</a></li>
+                <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+                <li class="link"><a href="article.html">Articles</a></li>
+                <li class="link"><a href="pharma.html">Pharmacy</a></li>
+                <li class="link"><a href="add-to-cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <h1>Top Vitamins & Supplements</h1>
+    </header>
+
+    <main class="vitamins__container">
+        <!-- Card 1 -->
+        <div class="vitamins__card">
+            <img src="vit_vit(c).png" alt="Vitamin C">
+            <h4>Vitamin C</h4>
+            <p>Boosts immunity and supports skin health.</p>
+            <span class="price">$12.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="vitamins__card">
+            <img src="vit_vit(d3).png" alt="Vitamin D3">
+            <h4>Vitamin D3</h4>
+            <p>Promotes bone health and improves calcium absorption.</p>
+            <span class="price">$14.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="vitamins__card">
+            <img src="vit_fish_oil.png" alt="Omega-3">
+            <h4>Omega-3 Fish Oil</h4>
+            <p>Supports heart and brain health.</p>
+            <span class="price">$19.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="vitamins__card">
+            <img src="vit_daily_vit.png" alt="Multivitamin">
+            <h4>Daily Multivitamin</h4>
+            <p>Complete nutritional support for daily energy and health.</p>
+            <span class="price">$24.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="vitamins__card">
+            <img src="vit_cacl_zinc.png" alt="Calcium">
+            <h4>Calcium + Magnesium</h4>
+            <p>Essential for strong bones and teeth.</p>
+            <span class="price">$16.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="vitamins__card">
+            <img src="vit_zinc_com.png" alt="Zinc Supplement">
+            <h4>Zinc Supplement</h4>
+            <p>Boosts immunity and aids in wound healing.</p>
+            <span class="price">$11.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="vitamins__card">
+            <img src="vit_probiot.png" alt="Probiotic">
+            <h4>Probiotic Capsules</h4>
+            <p>Supports gut health and digestion.</p>
+            <span class="price">$22.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="vitamins__card">
+            <img src="vit_mg_gly.png" alt="Magnesium">
+            <h4>Magnesium Glycinate</h4>
+            <p>Improves muscle function and sleep quality.</p>
+            <span class="price">$18.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="vitamins__card">
+            <img src="vit_iron.png" alt="Iron Supplement">
+            <h4>Iron Supplement</h4>
+            <p>Supports red blood cell production and prevents fatigue.</p>
+            <span class="price">$13.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="vitamins__card">
+            <img src="vit_biot.png" alt="Biotin">
+            <h4>Biotin</h4>
+            <p>Enhances hair, skin, and nail health.</p>
+            <span class="price">$15.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+    </main>
+
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(item) {
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${item.name} added to cart!`);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+            button.addEventListener('click', () => {
+                const card = button.parentElement;
+                const item = {
+                    name: card.querySelector('h4').innerText,
+                    price: card.querySelector('.price').innerText,
+                    image: card.querySelector('img').src,
+                };
+                addToCart(item);
+            });
+        });
+    </script>
+</body>
+</html>

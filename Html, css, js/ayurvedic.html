@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Ayurvedic Products</title>
+    <link rel="stylesheet" href="ayurvedic-style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="section_container nav_container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="symptom.html">SymptomAnalyzer</a></li>
+                <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+                <li class="link"><a href="article.html">Articals</a></li>
+                <li class="link"><a href="pharma.html">Pharmacy</a></li>
+                <li class="link"><a href="add-to-cart.html">Cart</a></li>
+            </ul>
+        <h1>Top Ayurvedic Products</h1>
+    </header>
+
+    <main class="ayurvedic__container">
+        <!-- Card 1 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_ashwagandha.png" alt="Ashwagandha Capsules">
+            <h4>Ashwagandha Capsules</h4>
+            <p>Helps reduce stress and boost energy.</p>
+            <span class="price">$18.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_triphal.png" alt="Triphala Powder">
+            <h4>Triphala Powder</h4>
+            <p>Aids digestion and detoxifies the body.</p>
+            <span class="price">$12.49</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_turmeric.png" alt="Turmeric Tablets">
+            <h4>Turmeric Tablets</h4>
+            <p>Boosts immunity and reduces inflammation.</p>
+            <span class="price">$14.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_amla.png" alt="Amla Juice">
+            <h4>Amla Juice</h4>
+            <p>Rich in Vitamin C for skin and hair health.</p>
+            <span class="price">$9.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_shatavari.png" alt="Shatavari Syrup">
+            <h4>Shatavari Syrup</h4>
+            <p>Supports women's health and vitality.</p>
+            <span class="price">$16.49</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_neem.png" alt="Neem Oil">
+            <h4>Neem Oil</h4>
+            <p>Promotes healthy skin and hair.</p>
+            <span class="price">$7.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_giloy.png" alt="Giloy Tablets">
+            <h4>Giloy Tablets</h4>
+            <p>Boosts immunity and fights infections.</p>
+            <span class="price">$13.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_brahmi.png" alt="Brahmi Capsules">
+            <h4>Brahmi Capsules</h4>
+            <p>Improves memory and brain function.</p>
+            <span class="price">$19.49</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_tulsi.png" alt="Tulsi Drops">
+            <h4>Tulsi Drops</h4>
+            <p>Boosts respiratory health and immunity.</p>
+            <span class="price">$8.49</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="ayurvedic__card">
+            <img src="ayu_guggul.png" alt="Guggul Tablets">
+            <h4>Guggul Tablets</h4>
+            <p>Supports joint health and detoxification.</p>
+            <span class="price">$21.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+    </main>
+
+    <script src="ayurvedic-script.js"></script>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(item) {
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${item.name} added to cart!`);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+            button.addEventListener('click', () => {
+                const card = button.parentElement;
+                const item = {
+                    name: card.querySelector('h4').innerText,
+                    price: card.querySelector('.price').innerText,
+                    image: card.querySelector('img').src,
+                };
+                addToCart(item);
+            });
+        });
+    </script
+</body>
+</html>

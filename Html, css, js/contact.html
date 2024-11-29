@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Doctor Finder & Pharmacy</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css */
+
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Body Styling */
+body {
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Main Container */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Section Headers */
+h2 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Contact Info */
+.contact-info, .customer-care, .feedback-form {
+    margin-bottom: 2rem;
+}
+
+.contact-info p, .customer-care p, .customer-care ul {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Feedback Form */
+.feedback-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-form label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+.feedback-form input, .feedback-form textarea {
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.feedback-form button {
+    padding: 0.7rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-form button:hover {
+    background-color: #45a049;
+}
+
+#formStatus {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    main {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <a href="index.html">Back to menu</a>
+    <header>
+        <nav class="section__container nav__container">
+            <div class="nav__logo">
+              <img src="synptocare_logo.png" alt="Symptocare" class="logo__image">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+             <li class="link"><a href="index.html">Home</a></li>
+              <li class="link"><a href="about.html">About Us</a></li>
+              <li class="link"><a href="symptom.html">SymptomAnalyer</a></li>
+              <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+              <li class="link"><a href="article.html">Aritcles</a></li>
+              <li class="link"><a href="pharma.html">Pharmacy</a></li>
+             
+            </li>
+            
+            </ul>
+            
+              <li class="btn"><a href="contact.html">Contact us</a></li>
+            
+            
+          </nav>   
+        <h1>Contact Us</h1>
+    </header>
+
+    <main>
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> 7-8-57,road no 35 , jubliee hills , hyderabad-506123</p>
+            <p><strong>Phone:</strong> 8328015334 , 88852 99732 </p>
+            <p><strong>Email:</strong> symptocare@gmail.com</p>
+        </section>
+        <p>
+            
+
+        <section class="customer-care">
+            <h2>Customer Care</h2>
+            <p>If you need immediate assistance, call our customer care line or email us.</p>
+            <ul>
+                <li>General Support: support@healthcare.com</li>
+                <li>Pharmacy Help: pharmacy@healthcare.com</li>
+                <li>Doctor Finder: doctors@healthcare.com</li>
+            </ul>
+        </section>
+
+        <section class="feedback-form">
+            <h2>Feedback</h2>
+            <form id="feedbackForm" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="formStatus"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HealthCare Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const formStatus = document.getElementById('formStatus');
+
+            if (!name || !email || !message) {
+                formStatus.textContent = "Please fill out all fields.";
+                formStatus.style.color = 'red';
+                return false;
+            }
+
+            formStatus.textContent = "Form submitted successfully!";
+            formStatus.style.color = 'green';
+            return true;
+        }
+    </script>
+     <a href="index.html">Back to menu</a>   
+</body>
+</html>

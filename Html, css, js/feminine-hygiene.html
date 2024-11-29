@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Feminine Hygiene Products</title>
+    <link rel="stylesheet" href="feminine-hygiene-style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="section_container nav_container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="symptom.html">SymptomAnalyzer</a></li>
+                <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+                <li class="link"><a href="article.html">Articals</a></li>
+                <li class="link"><a href="pharma.html">Pharmacy</a></li>
+                <li class="link"><a href="add-to-cart.html">Cart</a></li>
+            </ul>
+        <h1>Top Feminine Hygiene Products</h1>
+    </header>
+
+    <main class="hygiene__container">
+        <!-- Card 1 -->
+        <div class="hygiene__card">
+            <img src="fem_san_pad.png" alt="Sanitary Pads">
+            <h4>Sanitary Pads</h4>
+            <p>Soft, super absorbent, and leak-proof.</p>
+            <span class="price">$5.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="hygiene__card">
+            <img src="fem_org_tam.png" alt="Tampons">
+            <h4>Organic Tampons</h4>
+            <p>100% organic cotton, chemical-free.</p>
+            <span class="price">$7.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="hygiene__card">
+            <img src="fem_cup.png" alt="Menstrual Cup">
+            <h4>Menstrual Cup</h4>
+            <p>Eco-friendly and reusable for up to 12 hours of comfort.</p>
+            <span class="price">$12.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="hygiene__card">
+            <img src="fem_inti_wash.png" alt="Intimate Wash">
+            <h4>Intimate Wash</h4>
+            <p>Maintains pH balance for feminine hygiene.</p>
+            <span class="price">$8.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="hygiene__card">
+            <img src="fem_panty.png" alt="Pantyliners">
+            <h4>Pantyliners</h4>
+            <p>Ultra-thin liners for everyday freshness.</p>
+            <span class="price">$4.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="hygiene__card">
+            <img src="fem_painrelief.png" alt="Period Pain Relief Patch">
+            <h4>Period Pain Relief Patch</h4>
+            <p>Instant heat therapy for cramps.</p>
+            <span class="price">$6.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="hygiene__card">
+            <img src="fem_wipes.png" alt="Feminine Wipes">
+            <h4>Feminine Wipes</h4>
+            <p>Gentle cleansing wipes for intimate areas.</p>
+            <span class="price">$3.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="hygiene__card">
+            <img src="fem_per_panty.png" alt="Period Underwear">
+            <h4>Period Underwear</h4>
+            <p>Leak-proof and reusable for worry-free periods.</p>
+            <span class="price">$14.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="hygiene__card">
+            <img src="fem_vagina.png" alt="Vaginal Health Supplements">
+            <h4>Vaginal Health Supplements</h4>
+            <p>Probiotics for optimal vaginal health.</p>
+            <span class="price">$10.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="hygiene__card">
+            <img src="fem_bre_pads.png" alt="Breast Pads">
+            <h4>Breast Pads</h4>
+            <p>Super absorbent pads for nursing mothers.</p>
+            <span class="price">$5.49</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+    </main>
+
+    <script src="feminine-hygiene-script.js"></script>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(item) {
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${item.name} added to cart!`);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+            button.addEventListener('click', () => {
+                const card = button.parentElement;
+                const item = {
+                    name: card.querySelector('h4').innerText,
+                    price: card.querySelector('.price').innerText,
+                    image: card.querySelector('img').src,
+                };
+                addToCart(item);
+            });
+        });
+    </script>
+</body>
+</html>

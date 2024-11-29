@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Fitness Products</title>
+    <link rel="stylesheet" href="fitness-style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header class="header">
+        <nav class="section_container nav_container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="symptom.html">SymptomAnalyzer</a></li>
+                <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+                <li class="link"><a href="article.html">Articals</a></li>
+                <li class="link"><a href="pharma.html">Pharmacy</a></li>
+                <li class="link"><a href="add-to-cart.html">Cart</a></li>
+            </ul>
+        <h1>Top Fitness Products</h1>
+    </header>
+
+    <main class="fitness__container">
+        <!-- Card 1 -->
+        <div class="fitness__card">
+            <img src="fit_mat.png" alt="Yoga Mat">
+            <h4>Premium Yoga Mat</h4>
+            <p>Non-slip and comfortable, ideal for yoga and Pilates.</p>
+            <span class="price">$29.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="fitness__card">
+            <img src="fit_dumb.png" alt="Adjustable Dumbbells">
+            <h4>Adjustable Dumbbells</h4>
+            <p>Perfect for strength training at home.</p>
+            <span class="price">$49.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="fitness__card">
+            <img src="fit_bands.png" alt="Resistance Bands">
+            <h4>Resistance Bands Set</h4>
+            <p>Great for stretching, strength training, and rehab exercises.</p>
+            <span class="price">$19.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="fitness__card">
+            <img src="fit_tracker.png" alt="Fitness Tracker">
+            <h4>Fitness Tracker</h4>
+            <p>Monitors your activity, heart rate, and sleep patterns.</p>
+            <span class="price">$69.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="fitness__card">
+            <img src="fit_whey.png" alt="Whey Protein Powder">
+            <h4>Whey Protein Powder</h4>
+            <p>High-quality protein for muscle recovery and growth.</p>
+            <span class="price">$39.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="fitness__card">
+            <img src="fit_roller.png" alt="Foam Roller">
+            <h4>Foam Roller</h4>
+            <p>Ideal for post-workout recovery and muscle relaxation.</p>
+            <span class="price">$24.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="fitness__card">
+            <img src="fit_bottle.png" alt="Insulated Water Bottle">
+            <h4>Insulated Water Bottle</h4>
+            <p>Keeps your drinks cold for hours during workouts.</p>
+            <span class="price">$15.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="fitness__card">
+            <img src="fit_bell.png" alt="Kettlebell">
+            <h4>Kettlebell</h4>
+            <p>Build strength and endurance with versatile workouts.</p>
+            <span class="price">$34.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="fitness__card">
+            <img src="fit_rope.png" alt="Jump Rope">
+            <h4>Adjustable Jump Rope</h4>
+            <p>Burn calories quickly with cardio workouts.</p>
+            <span class="price">$9.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="fitness__card">
+            <img src="fit_glove.png" alt="Workout Gloves">
+            <h4>Workout Gloves</h4>
+            <p>Protects hands and improves grip during weightlifting.</p>
+            <span class="price">$14.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+    </main>
+
+    <script src="fitness-script.js"></script>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(item) {
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${item.name} added to cart!`);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+            button.addEventListener('click', () => {
+                const card = button.parentElement;
+                const item = {
+                    name: card.querySelector('h4').innerText,
+                    price: card.querySelector('.price').innerText,
+                    image: card.querySelector('img').src,
+                };
+                addToCart(item);
+            });
+        });
+    </script>
+</body>
+</html>

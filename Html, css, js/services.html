@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the services of SymptoCare, including a symptom analyzer, pharmacy, and specialist consultation.">
+    <title>Our Services | SymptoCare</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f7f9fc, #eaf3ff);
+            color: #333;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        header {
+            background: #12ac8e;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1.2px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #107103;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: #00a851;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        footer {
+            background: #0056a8;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #eaf3ff;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card {
+            animation: fadeIn 1.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="section__container nav__container">
+        <div class="nav__logo">
+          <img src="synptocare_logo.png" alt="Symptocare" class="logo__image">Sympto<span>-Care</span></div>
+        <ul class="nav__links">
+         <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="symptom.html">SymptomAnalyer</a></li>
+          <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+          <li class="link"><a href="article.html">Aritcles</a></li>
+          <li class="link"><a href="pharma.html">Pharmacy</a></li>
+         
+        </li>
+        
+        </ul>
+        
+          <li class="btn"><a href="contact.html">Contact us</a></li>
+        
+        
+      </nav>
+   
+</header>
+
+<main>
+    <section>
+        <h2>Explore Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+              <!---  <img src="images/pharmacy.png" alt="Pharmacy">-->
+                <h3>All Medicines Pharmacy</h3>
+                <p>Get access to a wide range of medicines and healthcare products.</p>
+            </div>
+            <div class="service-card">
+               <!--- <img src="images/symptom-analyzer.png" alt="Symptom Analyzer"> -->
+                <h3>Health Symptom Analyzer</h3>
+                <p>Analyze your symptoms and get accurate health advice in minutes.</p>
+            </div>
+            <div class="service-card">
+            <!---    <img src="images/specialists.png" alt="Specialists"> -->
+                <h3>Specialists in Warangal</h3>
+                <p>Consult the best specialists across all fields in your region.</p>
+            </div>
+            
+        </div>
+    </section>
+</main>
+
+
+
+</body>
+</html>

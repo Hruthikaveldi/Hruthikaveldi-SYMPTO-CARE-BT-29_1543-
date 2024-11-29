@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page - SymptoCare</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your SymptoCare CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        form fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        form fieldset legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        form label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        form label img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Complete Your Payment</h1>
+    </header>
+    <section>
+        <h2>Choose a Payment Method</h2>
+        <form id="payment-form">
+            <fieldset>
+               <legend>UPI</legend>
+                <label>
+                    <img src="amazon_upi.png" alt="Amazon UPI Icon">
+                    <input type="checkbox" name="payment-method" value="amazon-upi">
+                    Amazon Pay UPI
+                </label>
+                <label>
+                    <img src="phonepay.png" alt="PhonePe Icon">
+                    <input type="checkbox" name="payment-method" value="phonepe">
+                    PhonePe
+                </label>
+                <label>
+                    <img src="paytem.png" alt="Other UPI Apps Icon">
+                    <input type="checkbox" name="payment-method" value="other-upi">
+                    Other UPI Apps (Google Pay, Paytm, etc.)
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Credit & Debit Cards</legend>
+                <label>
+                    <img src="card.png" alt="Credit/Debit Card Icon">
+                    <input type="checkbox" name="payment-method" value="credit-debit-card">
+                    Add a new credit or debit card
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>More Ways to Pay</legend>
+                <label>
+                    <img src="upi.png" alt="Amazon Pay Icon">
+                    <input type="checkbox" name="payment-method" value="amazon-pay-balance">
+                    Amazon Pay Balance
+                </label>
+                <label>
+                    <img src="netbanking.png" alt="Net Banking Icon">
+                    <input type="checkbox" name="payment-method" value="net-banking">
+                    Net Banking
+                </label>
+                <label>
+                    <img src="cod.png" alt="Cash on Delivery Icon">
+                    <input type="checkbox" name="payment-method" value="cash-on-delivery">
+                    Cash on Delivery / Pay on Delivery
+                </label>
+            </fieldset>
+            <button type="button" id="pay-now-btn">Pay Now</button>
+        </form>
+    </section>
+    <footer>
+        <p>Thank you for choosing SymptoCare!</p>
+    </footer>
+    <script>
+        // Functionality for the Pay Now button
+        document.getElementById("pay-now-btn").addEventListener("click", () => {
+            const paymentMethods = document.querySelectorAll('input[name="payment-method"]:checked');
+            const selectedMethods = Array.from(paymentMethods).map((method) => method.value);
+
+            if (selectedMethods.length === 0) {
+                alert("Please select at least one payment method to proceed.");
+            } else {
+                alert(`You selected: ${selectedMethods.join(", ")}. Redirecting to payment gateway...`);
+                // Redirect logic
+                window.location.href = "payment-qr.html"; // Replace with actual URL
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Face Washes & Cleansers</title>
+    <link rel="stylesheet" href="facewash_cleansers.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="section_container nav_container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="symptom.html">SymptomAnalyzer</a></li>
+                <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+                <li class="link"><a href="article.html">Articals</a></li>
+                <li class="link"><a href="pharma.html">Pharmacy</a></li>
+                <li class="link"><a href="add-to-cart.html">Cart</a></li>
+            </ul>
+     
+         <!--   <div class="cart">
+                <img src="grocery-store.png" alt="Cart">
+                <span id="cart-count">0</span>
+            </div> -->
+        </nav>
+    </header>
+
+    <main class="pharmacy__container">
+        <!-- Card 1 -->
+        <div class="pharmacy__card">
+            <img src="face_ceta.png" alt="Cetaphil Gentle Skin Cleanser">
+            <h4>Cetaphil Gentle Skin Cleanser</h4>
+            <p>Hydrates and soothes dry, sensitive skin.</p>
+            <span class="price">$12.50</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="pharmacy__card">
+            <img src="face_neutro.png" alt="Neutrogena Oil-Free Acne Wash">
+            <h4>Neutrogena Oil-Free Acne Wash</h4>
+            <p>Effective in preventing breakouts and reducing acne.</p>
+            <span class="price">$9.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="pharmacy__card">
+            <img src="face_la roche.png" alt="La Roche-Posay Toleriane Cleanser">
+            <h4>La Roche-Posay Toleriane Cleanser</h4>
+            <p>Gentle cleanser for sensitive, oily skin.</p>
+            <span class="price">$14.30</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="pharmacy__card">
+            <img src="face_neem.png" alt="Himalaya Neem Face Wash">
+            <h4>Himalaya Neem Face Wash</h4>
+            <p>Removes excess oil and prevents pimples.</p>
+            <span class="price">$5.60</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="pharmacy__card">
+            <img src="face_cerave.png" alt="CeraVe Foaming Cleanser">
+            <h4>CeraVe Foaming Cleanser</h4>
+            <p>Cleanses and removes oil without disrupting the skin barrier.</p>
+            <span class="price">$15.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="pharmacy__card">
+            <img src="face_bioti.png" alt="Biotique Bio Neem Purifying Face Wash">
+            <h4>Biotique Bio Neem Face Wash</h4>
+            <p>Clears skin impurities and pimples naturally.</p>
+            <span class="price">$4.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="pharmacy__card">
+            <img src="face_simple kind.png" alt="Simple Kind to Skin Refreshing Wash">
+            <h4>Simple Kind to Skin Wash</h4>
+            <p>Soothes and nourishes sensitive skin.</p>
+            <span class="price">$6.80</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="pharmacy__card">
+            <img src="face_garnier.png" alt="Garnier Micellar Cleansing Water">
+            <h4>Garnier Micellar Cleansing Water</h4>
+            <p>Removes makeup and cleanses skin in one step.</p>
+            <span class="price">$7.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="pharmacy__card">
+            <img src="face_ponds.png" alt="Pond's Pure Detox Face Wash">
+            <h4>Pond's Pure Detox Face Wash</h4>
+            <p>Detoxifies skin with activated charcoal.</p>
+            <span class="price">$4.50</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="pharmacy__card">
+            <img src="face_aveeno.png" alt="Aveeno Clear Complexion Face Wash">
+            <h4>Aveeno Clear Complexion Face Wash</h4>
+            <p>Improves skin tone and texture while treating acne.</p>
+            <span class="price">$10.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+    </main>
+
+    <script src="facewash_cleansers.js"></script>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(item) {
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${item.name} added to cart!`);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+            button.addEventListener('click', () => {
+                const card = button.parentElement;
+                const item = {
+                    name: card.querySelector('h4').innerText,
+                    price: card.querySelector('.price').innerText,
+                    image: card.querySelector('img').src,
+                };
+                addToCart(item);
+            });
+        });
+    </script>
+</body>
+</html>

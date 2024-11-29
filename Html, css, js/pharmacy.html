@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SymptoCare Pharmacy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pharmacy.css">
+    <style>
+        /* Add styles for the header */
+        header {
+            background-image: linear-gradient(
+                    to right,
+                    rgba(18, 172, 142, 0.9),
+                    rgba(18, 172, 142, 0.7)
+                ),
+                url("assets/header.jpg"); /* Replace with the correct image path */
+            background-position: center center; /* Center the image */
+            background-size: cover; /* Cover the entire header area */
+            background-repeat: no-repeat; /* Prevent repetition */
+            text-align: center; /* Center the text */
+            color: #ffffff; /* White text for visibility */
+            padding: 50px 20px; /* Add spacing inside the header */
+            font-family: Arial, sans-serif; /* Optional font */
+        }
+
+        header h1 {
+            font-size: 3rem; /* Adjust title size */
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5rem; /* Adjust subtitle size */
+        }
+    </style>
+</head>
+<body>
+    <!-- Add a header section -->
+    <header>
+        <nav class="section__container nav__container">
+            <div class="nav__logo">
+              <img src="synptocare_logo.png" alt="Symptocare" class="logo__image">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+             <li class="link"><a href="index.html">Home</a></li>
+              <li class="link"><a href="about.html">About Us</a></li>
+              <li class="link"><a href="symptom.html">SymptomAnalyer</a></li>
+              <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+              <li class="link"><a href="article.html">Articles</a></li>
+              <li class="link"><a href="pharma.html">Pharmacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="pharmacy-container">
+        <h1>Pharmacy</h1>
+        <p>Browse diseases and find related drugs by alphabetical order.</p>
+        
+        <!-- A-Z Navigation for Diseases -->
+        <div class="alphabet-nav">
+            <!-- Links for A-Z Navigation -->
+            <a href="#" onclick="filterDiseases('A')">A</a>
+            <a href="#" onclick="filterDiseases('B')">B</a>
+            <a href="#" onclick="filterDiseases('C')">C</a>
+            <a href="#" onclick="filterDiseases('D')">D</a>
+            <a href="#" onclick="filterDiseases('E')">E</a>
+            <a href="#" onclick="filterDiseases('F')">F</a>
+            <a href="#" onclick="filterDiseases('G')">G</a>
+            <a href="#" onclick="filterDiseases('H')">H</a>
+            <a href="#" onclick="filterDiseases('I')">I</a>
+            <a href="#" onclick="filterDiseases('J')">J</a>
+            <a href="#" onclick="filterDiseases('K')">K</a>
+            <a href="#" onclick="filterDiseases('L')">L</a>
+            <a href="#" onclick="filterDiseases('M')">M</a>
+            <a href="#" onclick="filterDiseases('N')">N</a>
+            <a href="#" onclick="filterDiseases('O')">O</a>
+            <a href="#" onclick="filterDiseases('P')">P</a>
+            <a href="#" onclick="filterDiseases('Q')">Q</a>
+            <a href="#" onclick="filterDiseases('R')">R</a>
+            <a href="#" onclick="filterDiseases('S')">S</a>
+            <a href="#" onclick="filterDiseases('T')">T</a>
+            <a href="#" onclick="filterDiseases('U')">U</a>
+            <a href="#" onclick="filterDiseases('V')">V</a>
+            <a href="#" onclick="filterDiseases('W')">W</a>
+            <a href="#" onclick="filterDiseases('X')">X</a>
+            <a href="#" onclick="filterDiseases('Y')">Y</a>
+            <a href="#" onclick="filterDiseases('Z')">Z</a>
+
+        </div>
+
+        <!-- Disease List -->
+        <div id="disease-list" class="content-section">
+            <!-- Dynamically populated by JavaScript -->
+        </div>
+
+        <!-- Drug List -->
+        <div id="drug-list" class="content-section" style="display: none;">
+            <h2 id="selected-disease"></h2>
+            <div class="alphabet-nav">
+             <!--    Links for A-Z Navigation for Drugs -->
+                <a href="#" onclick="filterDrugs('A')">A</a>
+                <a href="#" onclick="filterDrugs('B')">B</a>
+                <a href="#" onclick="filterDrugs('C')">C</a>
+                <a href="#" onclick="filterDrugs('D')">D</a>
+                <a href="#" onclick="filterDrugs('E')">E</a>
+                <a href="#" onclick="filterDrugs('F')">F</a>
+                <a href="#" onclick="filterDrugs('G')">G</a>
+                <a href="#" onclick="filterDrugs('H')">H</a>
+                <a href="#" onclick="filterDrugs('I')">I</a>
+                <a href="#" onclick="filterDrugs('J')">J</a>
+                <a href="#" onclick="filterDrugs('K')">K</a>
+                <a href="#" onclick="filterDrugs('L')">L</a>
+                <a href="#" onclick="filterDrugs('M')">M</a>
+                <a href="#" onclick="filterDrugs('N')">N</a>
+                <a href="#" onclick="filterDrugs('O')">O</a>
+                <a href="#" onclick="filterDrugs('P')">P</a>
+                <a href="#" onclick="filterDrugs('Q')">Q</a>
+                <a href="#" onclick="filterDrugs('R')">R</a>
+                <a href="#" onclick="filterDrugs('S')">S</a>
+                <a href="#" onclick="filterDrugs('T')">T</a>
+                <a href="#" onclick="filterDrugs('U')">U</a>
+                <a href="#" onclick="filterDrugs('V')">V</a>
+                <a href="#" onclick="filterDrugs('W')">W</a>
+                <a href="#" onclick="filterDrugs('X')">X</a>
+                <a href="#" onclick="filterDrugs('Y')">Y</a>
+                <a href="#" onclick="filterDrugs('Z')">Z</a>
+            </div>
+        
+            <div id="drug-list-content"></div>
+            <div id="drug-details" style="display: none;">
+                <!-- Drug details will be dynamically populated here -->
+            </div>
+            <button onclick="goBack()">Back to Diseases</button>
+
+            <!-- Disease Information Section EXTRA -->
+<div id="disease-info" class="content-section" style="display: none;">
+    <!-- Disease details like description, symptoms, and treatment will appear here -->
+</div>
+
+            
+        </div>
+    </div>
+
+    <script src="pharmacy.js"></script>
+</body>
+</html>

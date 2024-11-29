@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SymptoCare - Symptom Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       /* Basic reset and styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Menu items */
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+    position: relative;
+}
+
+/* Menu links */
+.menu a {
+    display: block;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Hover effect for menu items */
+.menu a:hover {
+    background-color: #575757;
+}
+
+/* Dropdown specific styles */
+.dropdown {
+    display: inline-block;
+}
+
+.dropbtn {
+    color: white;
+    padding: 16px 20px;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #575757;
+}
+
+        
+
+        /* Footer */
+       .footer {
+            background-color: #2e4c78;
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .footer__col h3, .footer__col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .footer__col p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .footer__bar {
+            background-color: #243b58;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .footer__socials span {
+            font-size: 1.2rem;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #2e4c78;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #00cccc;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #009999;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Symptom Analyzer</a>
+                    <div class="dropdown-content">
+                        <a href="#">Analyze Symptoms</a>
+                        <a href="#">Common Diseases</a>
+                        <a href="#">Consult a Doctor</a>
+                    </div>
+                </li>
+                <li><a href="#">Specialists</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Pharmacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Main content -->
+    <main>
+        <section id="questionnaire">
+            <h2>Select Symptoms</h2>
+            <p>Choose symptoms that you are experiencing:</p>
+            <div id="symptom-list">
+                <!-- Dynamically populated symptom checkboxes -->
+            </div>
+            <button id="analyze-btn">Analyze Symptoms</button>
+        </section>
+
+        <section id="results" style="display: none;">
+            <h2>Possible Diseases</h2>
+            <div id="result-list">
+                <!-- Results will be displayed here -->
+            </div>
+            <button id="reset-btn">Reset</button>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2023 SymptoCare. All Rights Reserved.</p>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Survey -->
+    <script>
+        function submitSurvey() {
+            const fever = document.querySelector('input[name="fever"]:checked');
+            const headache = document.querySelector('input[name="headache"]:checked');
+            const fatigue = document.querySelector('input[name="fatigue"]:checked');
+
+            if (fever && fever.value === "Yes" &&
+                headache && headache.value.startsWith("Yes") &&
+                fatigue && fatigue.value.startsWith("Yes")) {
+                alert("You may be suffering from typhoid fever. Please consult a doctor.");
+            } else {
+                alert("Thank you for completing the survey. Based on your answers, it does not indicate typhoid symptoms. However, if you feel unwell, please see a doctor.");
+            }
+        }
+    </script>
+
+    <a href="index.html">Back to menu</a>
+    <script src="script-analyzer.js"></script>
+</body>
+
+</html>

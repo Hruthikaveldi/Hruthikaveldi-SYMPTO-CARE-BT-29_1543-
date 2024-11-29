@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="pharmacy-styles.css">
+    <link rel="stylesheet" href="pharma-styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pharma_catogery.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        /* Existing Styles */
+        .cart {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart img {
+            width: 30px;
+            margin-right: 5px;
+        }
+        .slideshow {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+        }
+
+        /* Glowing Button Styling */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            color: #FFF;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 12px;
+            background-color: transparent;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out;
+            margin: 10px 0; /* Adjusted margin for better layout */
+        }
+
+        .btn::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: orange;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Glow Effect */
+        .btn::before {
+            content: "";
+            background: linear-gradient(
+                45deg,
+                #FF0000, #FF7300, #FFFB00, #48FF00,
+                #00FFD5, #002BFF, #FF00C8, #FF0000
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 600%;
+            z-index: -1;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            filter: blur(8px);
+            animation: glowing 20s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+            opacity: 0;
+        }
+
+        @keyframes glowing {
+            0% {background-position: 0 0;}
+            50% {background-position: 400% 0;}
+            100% {background-position: 0 0;}
+        }
+
+        /* Hover Effect */
+        .btn:hover::before {
+            opacity: 1;
+        }
+
+        .btn:active::after {
+            background: transparent;
+        }
+
+        .btn:active {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Popup Styling */
+        .cart-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 128, 0, 0.9);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+            z-index: 1000;
+        }
+
+        .cart-popup.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Optional: Customize the popup text */
+        .cart-popup p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+    <title>SymptoCare | Pharmacy</title>
+</head>
+<body>
+    <header>
+        <nav class="section__container nav__container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="symptom.html">SymptomAnalyzer</a></li>
+                <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+                <li class="link"><a href="article.html">Articals</a></li>
+                <li class="link"><a href="pharma.html">Pharmacy</a></li>
+            </ul>
+     
+            <div class="cart">
+                <img src="grocery-store.png" alt="Cart">
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+    <div class="slideshow">
+        <div class="slide fade">
+            <img src="banner1.png" alt="Health Banner 1">
+        </div>
+        <div class="slide fade">
+            <img src="banner2.png" alt="Health Banner 2">
+        </div>
+        <div class="slide fade">
+            <img src="banner3.png" alt="Health Banner 3">
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                <p>Tax (10%): <span id="tax">$0.00</span></p>
+                <p><strong>Total: <span id="total">$0.00</span></strong></p>
+            </div>
+            <button id="paynow-btn" class="checkout-btn">Pay Now</button>
+        </div>
+    </div>
+
+    <section class="section__container pharmacy__container">
+        <h2 class="section__header">Pharmacy</h2>
+        <p>Explore a wide range of healthcare products and medicines at our pharmacy.</p>
+
+        <div class="pharmacy__categories">
+            <h1>SEARCH YOUR DRUGS ALPHABETICALLY</h1>
+            <a href="pharmacy.html" class="category__btn">Prescriptions</a>
+           </div>
+
+        <div class="pharmacy__grid">
+            <div class="pharmacy__card">
+                <img src="paracetamol.png" alt="Paracetamol">
+                <h4>Paracetamol</h4>
+                <p>For pain relief and fever reduction.</p>
+                <span class="price">.99</span>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="pharmacy__card">
+                <img src="vitc.png" alt="Vitamin C">
+                <h4>Vitamin C</h4>
+                <p>Boost your immune system.</p>
+                <span class="price">$8.50</span>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="pharmacy__card">
+                <img src="capnea_inject.jpg" alt="Ibuprofen">
+                <h4>Ibuprofen</h4>
+                <p>Anti-inflammatory and pain reliever.</p>
+                <span class="price">$6.20</span>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="pharmacy__card">
+                <img src="pharma_cal.png" alt="Calcium Tablets">
+                <h4>Calcium Tablets</h4>
+                <p>Maintain healthy bones and teeth.</p>
+                <span class="price">$7.75</span>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Popup -->
+    <div id="cart-popup" class="cart-popup">
+        <p>Item added to cart!</p>
+    </div>
+     <section class="shop-category">
+        <h1>Shop by Category</h1>
+        <div class="categories">
+          <div class="category">
+            <div class="card">
+              <h3>VITAMINS</h3>
+              <a href="vitamins.html"><img src="cate_vit.png" alt="vitamins"></a>
+              </div>
+          </div>
+         
+          </div>
+          <div class="category">
+            <div class="card">
+              <h3>ORTHOPAEDICS</h3>
+              <a href="orthopaedics.html"><img src="cate_ortho.png" alt="vitamins"></a>
+            
+            </div>
+          </div>
+          <div class="category">
+            <div class="card">
+              <h3>FEMININE HYGIENE</h3>
+              <a href="feminine-hygiene.html"><img src="cate_fem.png" alt="vitamins"></a>
+              
+            </div>
+          </div>
+          <div class="category">
+            <div class="card">
+              <h3>AYURVEDIC</h3>
+              <a href="ayurvedic.html"><img src="cate_ayu.png" alt="vitamins"></a>
+              
+            </div>
+          </div>
+          <div class="category">
+            <div class="card">
+              <h3>FACE WASH & CLEANSERS</h3>
+              <a href="facewash_cleansers.html"><img src="cate_face.png" alt="vitamins"></a>
+              </div>
+          </div>
+         
+        <div class="category">
+            <div class="card">
+              <h3>FITNESS</h3>
+              <a href="fitness.html"><img src="cate_fitness.png" alt="vitamins"></a>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="section__container footer__container">
+            <p>&copy; 2023 SymptoCare. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="pharma_script.js"></script>
+
+    
+
+</body>
+</html>

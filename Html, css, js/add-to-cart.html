@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - SymptoCare</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>  .back-menu {
+        display: inline-block;
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: #2e4c78; /* Matches navbar color */
+        color: #ffffff;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-menu:hover {
+        background-color: #243b58; /* Slightly darker shade for hover */
+        transform: translateY(-3px); /* Adds a lift effect */
+    }
+    .cart-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="section_container nav_container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="symptom.html">Symptom Analyzer</a></li>
+                <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+                <li class="link"><a href="article.html">Articles</a></li>
+                <li class="link"><a href="pharma.html">Pharmacy</a></li>
+            </ul>
+        </nav>
+        <h1>Your Shopping Cart</h1>
+    </header>
+    <a href="pharma.html" class="back-menu">Back to Menu</a>
+    <main class="cart__container">
+        <table class="cart__table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Items will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <div class="cart__summary">
+            <h3>Cart Summary</h3>
+            <p><strong>Subtotal:</strong> <span id="subtotal">$0.00</span></p>
+            <p><strong>Tax (10%):</strong> <span id="tax">$0.00</span></p>
+            <p><strong>Total:</strong> <span id="total">$0.00</span></p>
+            <button class="btn checkout-btn">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <script>
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartContainer = document.getElementById('cart-items');
+        const subtotalEl = document.getElementById('subtotal');
+        const taxEl = document.getElementById('tax');
+        const totalEl = document.getElementById('total');
+
+        function updateCart() {
+            cartContainer.innerHTML = '';
+            let subtotal = 0;
+
+            cartItems.forEach((item, index) => {
+                const row = document.createElement('tr');
+                const price = parseFloat(item.price.replace('$', ''));
+                subtotal += price;
+
+                row.innerHTML = `
+                    <td>
+                        <img src="${item.image}" alt="${item.name}" class="cart-img">
+                        ${item.name}
+                    </td>
+                    <td>${item.price}</td>
+                    <td>1</td>
+                    <td>${item.price}</td>
+                    <td>
+                        <button onclick="removeFromCart(${index})" class="btn remove-btn">Remove</button>
+                    </td>
+                `;
+                cartContainer.appendChild(row);
+            });
+
+            const tax = subtotal * 0.1;
+            const total = subtotal + tax;
+
+            subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+            taxEl.textContent = `$${tax.toFixed(2)}`;
+            totalEl.textContent = `$${total.toFixed(2)}`;
+        }
+
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            updateCart();
+        }
+
+        updateCart();
+
+        // Navigate to the payment page
+        document.querySelector('.checkout-btn').addEventListener('click', () => {
+            window.location.href = "payment_cart.html"; // Update 'payment-cart.html' with your actual payment page file name
+        });
+    </script>
+</body>
+</html>

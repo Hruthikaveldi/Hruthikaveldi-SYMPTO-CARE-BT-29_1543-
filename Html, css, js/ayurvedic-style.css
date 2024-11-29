@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f8ed;
+    color: #333;
+}
+
+.header {
+    background-color: #8bc34a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.ayurvedic__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+}
+
+.ayurvedic__card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ayurvedic__card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.ayurvedic__card h4 {
+    font-size: 18px;
+    color: #8bc34a;
+}
+
+.ayurvedic__card p {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.ayurvedic__card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4caf50;
+    margin: 10px 0;
+}
+
+.ayurvedic__card button {
+    background-color: #8bc34a;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.ayurvedic__card button:hover {
+    background-color: #5b8e2d;
+}
+
+.ayurvedic__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,156 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9f5fb;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Main header */
+h1 {
+    color: #2a4d69;
+    margin: 20px 0;
+    font-size: 2.5rem;
+}
+
+/* Container for articles */
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual article card */
+.article-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 250px;
+    padding: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings inside article card */
+.article-card h2, .article-card h3 {
+    font-size: 1.2rem;
+    color: #2a4d69;
+    margin: 10px 0;
+}
+
+/* Paragraphs in article card */
+.article-card p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Button styling */
+.article-card button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.article-card button:hover {
+    background-color: #01579b;
+}
+
+/* Article content */
+.article-content {
+    padding: 30px;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+.article-content h1 {
+    font-size: 2rem;
+    color: #2a4d69;
+    margin-bottom: 20px;
+}
+
+.article-content p {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* General button styling */
+button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #01579b;
+}
+
+/* Image styling */
+.article-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#full-article-content .article-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .articles-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-card {
+        width: 90%;
+    }
+
+    .article-content {
+        padding: 20px;
+    }
+}
+
+
+#full-article-content img.article-image {
+    width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+

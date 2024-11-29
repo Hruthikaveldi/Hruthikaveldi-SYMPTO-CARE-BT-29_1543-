@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Specialists</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+
+        /* Navbar */
+        .nav__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2e4c78;
+        }
+
+        .nav__logo {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav__links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            background-color: #00cccc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #009999;
+        }
+
+        /* Specialists Section */
+        .specialists-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #2e4c78;
+            margin-bottom: 40px;
+        }
+
+        .specialists-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .specialist-card {
+            background-color: #ffffff;
+            color: #333;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .specialist-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .specialist-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2e4c78;
+        }
+
+        .specialist-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .appointment-btn {
+            background-color: #00cccc;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .appointment-btn:hover {
+            background-color: #009999;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2e4c78;
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .footer__col h3, .footer__col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .footer__col p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .footer__bar {
+            background-color: #243b58;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .footer__socials span {
+            font-size: 1.2rem;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #2e4c78;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #00cccc;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #009999;
+        }
+        .back-menu {
+        display: inline-block;
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: #2e4c78; /* Matches navbar color */
+        color: #ffffff;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-menu:hover {
+        background-color: #243b58; /* Slightly darker shade for hover */
+        transform: translateY(-3px); /* Adds a lift effect */
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav__container">
+          <div class="nav__logo">Sympto<span>-Care</span></div>
+          <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="symptom.html">Symptom Analyzer</a></li>
+            <li><a href="types_of_doctors.html">Specialists</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="pharmacy.html">Pharmacy</a></li>
+          </ul>
+        </nav>
+    </header>
+    
+    <section class="specialists-section">
+        <a href="types_of_doctors.html" class="back-menu">Back to Menu</a>
+        <h1 class="section-title">Plastic Surgery Specialists in Warangal</h1>
+        <div class="specialists-container">
+            <div class="specialist-card">
+                <div class="profile-image">
+                    <img src="d_nagarjuna.png" alt="Dr. D. Nagarjuna">
+                </div>
+                <h3>Dr. D. Nagarjuna</h3>
+                <p><b>MaxCare Hospital</b></p>
+                <p>Address: Hanamkonda, Warangal, Telangana</p>
+                <p>Expert in reconstructive and cosmetic plastic surgery, offering advanced treatment for burns, congenital abnormalities, and aesthetic enhancements. The hospital provides state-of-the-art surgical facilities.</p>
+                <a href="https://www.skedoc.com" target="_blank">Directions</a>
+                <button class="appointment-btn" onclick="bookAppointment('Dr. D. Nagarjuna')">Book Appointment</button>
+            </div>
+            <div class="specialist-card">
+                <div class="profile-image">
+                    <img src="b_srikanth_reddy.png" alt="Dr. B. Srikanth Reddy">
+                </div>
+                <h3>Dr. B. Srikanth Reddy</h3>
+                <p><b>Susrutha Plastic Surgery Hospital</b></p>
+                <p>Address: Hanamkonda, Warangal, Telangana</p>
+                <p>Known for excellent results in facial reconstruction, scar revisions, and body contouring surgeries. The hospital has a reputation for using cutting-edge technologies.</p>
+                <a href="https://www.medindia.net" target="_blank">Directions</a>
+                <button class="appointment-btn" onclick="bookAppointment('Dr. B. Srikanth Reddy')">Book Appointment</button>
+            </div>
+            <div class="specialist-card">
+                <div class="profile-image">
+                    <img src="p_anil_kumar.png" alt="Dr. P. Anil Kumar">
+                </div>
+                <h3>Dr. P. Anil Kumar</h3>
+                <p><b>Rohini Super Specialty Hospital</b></p>
+                <p>Address: Ramnagar, Hanamkonda, Warangal, Telangana</p>
+                <p>Skilled in both reconstructive and aesthetic plastic surgeries, including cleft palate repair and breast reconstruction. The hospital offers comprehensive care with 24/7 emergency services.</p>
+                <a href="https://www.googlemaps.in" target="_blank">Directions</a>
+                <button class="appointment-btn" onclick="bookAppointment('Dr. P. Anil Kumar')">Book Appointment</button>
+            </div>
+        </div>
+    </section>
+    
+        
+    
+    <footer class="footer">
+        <p>© 2023 SymptoCare. All Rights Reserved.</p>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+             
+    <script>
+        function bookAppointment(doctorName) {
+            alert("Appointment booked with " + doctorName);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Specialists</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+
+        /* Navbar */
+        .nav__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2e4c78;
+        }
+
+        .nav__logo {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav__links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            background-color: #00cccc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #009999;
+        }
+
+        /* Specialists Section */
+        .specialists-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #2e4c78;
+            margin-bottom: 40px;
+        }
+
+        .specialists-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .specialist-card {
+            background-color: #ffffff;
+            color: #333;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .specialist-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .specialist-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2e4c78;
+        }
+
+        .specialist-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .appointment-btn {
+            background-color: #00cccc;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .appointment-btn:hover {
+            background-color: #009999;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2e4c78;
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .footer__col h3, .footer__col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .footer__col p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .footer__bar {
+            background-color: #243b58;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .footer__socials span {
+            font-size: 1.2rem;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .back-menu {
+        display: inline-block;
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: #2e4c78; /* Matches navbar color */
+        color: #ffffff;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-menu:hover {
+        background-color: #243b58; /* Slightly darker shade for hover */
+        transform: translateY(-3px); /* Adds a lift effect */
+    }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <nav class="nav__container">
+          <div class="nav__logo">Sympto<span>-Care</span></div>
+          <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="symptom.html">Symptom Analyzer</a></li>
+            <li><a href="types_of_doctors.html">Specialists</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="pharmacy.html">Pharmacy</a></li>
+          </ul>
+        </nav>
+    </header>
+    <section class="specialists-section">
+        <a href="types_of_doctors.html" class="back-menu">Back to Menu</a>
+        <h1 class="section-title">Our Specialists on Orthopedic in Warangal</h1>
+        <div class="specialists-container">
+            <div class="specialist-card">
+                <div class="profile-image">
+                    <img src="ortho_dr_1.png" alt="Doctor N. Venkanna">
+                </div>
+                <h3>DR. V RAJESH, MBBS, MS</h3>
+                <p><b> VEENA MEDICARE ORTHOPAEDIC HOSPITAL,
+                    6-2-103, Gandhi Nagar, Kakaji Nagar Colony, Hanamkonda,
+                    Warangal, TS 506001  
+                    Since 2009 </b></p>
+                <p>Distal Femoral Osteotomy, High Tibial Osteotomy, Treatment of Joint, Leg, Knee and Hand Pain Moscioplasty Procedures, Knee Replacement, Coccydynia, Hip Surgeries, Ankle Wound Treatments, Hip Injury & Knee Care
+                </p>
+                <a href="https://www.google.co.in/maps/dir/?api=1&destination=Veena+Medicare+Orthopaedic+Hospital,++6-2-103+Gandhi+Nagar+Kakaji+Nagar+Colony,+Hanamkonda,+Warangal,+TS+506001&hl=en">Directions</a>
+                <button class="appointment-btn" onclick="bookAppointment('Dr. N. Venkanna')">Book Appointment</button>
+            </div>
+            <div class="specialist-card">
+                <div class="profile-image">
+                    <img src="ortho_dr_2.png" alt="Doctor Srinivas Ramaka">
+                </div>
+                <h3>DR. P SUDHIR KUMAR, MBBS, D ORTHO</h3>
+                <p> <b> BALAJI HOSPITAL,
+                    Swami Vivekananda Road, Opposite Ram Laxman Theatre, Mathawada, Ramannapet,
+                    Warangal, TS 506002 </b></p>
+                   <p>Knee Replacement, Total Shoulder Replacement, Sports-Related Injuries, Trauma & Fractures</p>
+                  <a href="https://www.google.co.in/maps/dir/?api=1&destination=BALAJI+HOSPITAL,+Swami+Vivekananda+Road+Opposite+Ram+Laxman+Theatre,+Mathawada+Ramannapet,+Warangal,+TS+506002&hl=en">Directions</a>
+                <button class="appointment-btn" onclick="bookAppointment('Dr. Srinivas Ramaka')">Book Appointment</button>
+            </div>
+            <div class="specialist-card">
+                <div class="profile-image">
+                    <img src="ortho_dr_3.png" alt="Doctor Raj Kumar">
+                </div>
+                <h3>
+                    DR. PRADEEP KUMAR, MBBS, MS</h3>
+                <p><b>  CHRISTHU JYOTHI HOSPITAL,
+                    6, 2-68, Opposite Shrusti Hospital, Kakaji Colony, Kakaji Nagar Colony, Hanamkonda,
+                    Warangal, TS 506001</b></p>
+
+                <p>Shoulder and Knee Replacement, Trauma, Joint Replacement Surgery, Hand Conditions, Foot and Ankle Surgery & Sports-Related Injuries</p>
+                <button class="appointment-btn" onclick="bookAppointment('Dr. Raj Kumar')">Book Appointment</button>
+                <a href="https://www.google.co.in/maps/dir/?api=1&destination=Christhu+Jyothi+Hospital,+6+2-68+Opposite+Shrusti+Hospital+Kakaji+Colony,+Kakaji+Nagar+Colony+Hanamkonda,+Warangal,+TS+506001&hl=en">Directions</a>
+               
+            </div>
+        </div>
+        
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
+                <h3>SymptoCare</h3>
+                <p>Committed to delivering compassionate, personalized care every step of the way.</p>
+            </div>
+            <div class="footer__col">
+                <h4>About Us</h4>
+                <p>Home</p>
+                <p>About Us</p>
+                <p>Work With Us</p>
+                <p>Blog</p>
+            </div>
+            <div class="footer__col">
+                <h4>Services</h4>
+                <p>Search Terms</p>
+                <p>Advance Search</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p><i class="ri-map-pin-2-fill"></i> 123, London Bridge Street, London</p>
+                <p><i class="ri-mail-fill"></i> support@care.com</p>
+                <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <p>© 2023 Web Design Mastery. All rights reserved.</p>
+            <div class="footer__socials">
+                <span><i class="ri-instagram-line"></i></span>
+                <span><i class="ri-facebook-fill"></i></span>
+                <span><i class="ri-twitter-fill"></i></span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function bookAppointment(doctorName) {
+            alert("Appointment booked with " + doctorName);
+        }
+    </script>
+</body>
+</html>

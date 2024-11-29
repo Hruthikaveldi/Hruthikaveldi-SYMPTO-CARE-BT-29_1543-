@@ -1,0 +1,125 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f0f8ff; /* Light blue medical theme */
+    color: #333; /* Dark gray for readability */
+    line-height: 1.6;
+    font-size: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+#questionnaire, #results {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2rem;
+    color: #006c67; /* Deep green - medical theme */
+    margin-bottom: 20px;
+}
+
+/* Symptom List Styling */
+#symptom-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto; /* Add scroll for many symptoms */
+
+}
+
+.checkbox-label {
+    background-color: #e3f2fd; /* Light blue shade */
+    border: 1px solid #90caf9; /* Slightly darker blue */
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkbox-label:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Button Styling */
+button {
+    background-color: #006c67; /* Deep green */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #004f4d; /* Darker green */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+/* Results Section */
+#result-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#result-list p {
+    background-color: #f9fbe7; /* Light green-yellow */
+    border: 1px solid #c5e1a5; /* Green border */
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease;
+}
+
+#result-list p:hover {
+    background-color: #e6ee9c; /* Slightly darker green-yellow */
+}
+
+/* Scrollbar Styling */
+#symptom-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#symptom-list::-webkit-scrollbar-thumb {
+    background-color: #90caf9; /* Blue scrollbar */
+    border-radius: 10px;
+}
+
+#symptom-list::-webkit-scrollbar-track {
+    background-color: #e3f2fd;
+    border-radius: 10px;
+}
+

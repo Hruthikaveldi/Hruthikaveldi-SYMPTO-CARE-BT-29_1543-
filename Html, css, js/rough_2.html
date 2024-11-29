@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SymptoCare - Symptom Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Reset for margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full height */
+            background-color: #f4f4f4; /* Light background */
+        }
+
+        /* Header Styles */
+      /*  header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5; /* Ensure it's on top */
+        
+
+       
+
+        .btn a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Main content Styles */
+        main {
+            flex: 1; /* Take the remaining space */
+            padding: 60px 20px 20px 20px; /* Space for header */
+            overflow: auto; /* Enable scrolling if content overflows */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer {
+            background-color: #2e4c78;
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .footer__col h3, .footer__col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .footer__col p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .footer__bar {
+            background-color: #243b58;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .footer__socials span {
+            font-size: 1.2rem;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #2e4c78;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #00cccc;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #009999;
+        }
+        /* Navbar */
+        .nav__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2e4c78;
+        }
+
+        .nav__logo {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav__links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Header and Navigation -->
+  <!--  <header>
+        <nav class="section__container nav__container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="Symptom.html">Symptom Analyzer</a></li>
+                <li><a href="types_of_doctors.html">Specialists</a></li>
+                <li><a href="article.html">Articles</a></li>
+                <li><a href="pharmacy.html">Pharmacy</a></li>
+            </ul>
+            <li class="btn"><a href="contact.html">Contact Us</a></li>
+        </nav>
+    </header> -->
+    <header>
+        <nav class="nav__container">
+          <div class="nav__logo">Sympto<span>-Care</span></div>
+          <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="Symptom.html">Symptom Analyzer</a></li>
+            <li><a href="types_of_doctors.html">Specialists</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="pharmacy.html">Pharmacy</a></li>
+          
+          <link><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section id="questionnaire">
+            <h2>Select Symptoms</h2>
+            <p>Choose symptoms that you are experiencing:</p>
+            <div id="symptom-list">
+                <!-- Dynamically populated symptom checkboxes -->
+            </div>
+            <button id="analyze-btn">Analyze Symptoms</button>
+        </section>
+
+        <section id="results" style="display: none;">
+            <h2>Possible Diseases</h2>
+            <div id="result-list">
+                <!-- Results will be displayed here -->
+            </div>
+            <button id="reset-btn">Reset</button>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+   
+
+    <!-- JavaScript for Survey -->
+   <!-- <script>
+        function submitSurvey() {
+            const fever = document.querySelector('input[name="fever"]:checked');
+            const headache = document.querySelector('input[name="headache"]:checked');
+            const fatigue = document.querySelector('input[name="fatigue"]:checked');
+
+            if (fever && fever.value === "Yes" &&
+                headache && headache.value.startsWith("Yes") &&
+                fatigue && fatigue.value.startsWith("Yes")) {
+                alert("You may be suffering from typhoid fever. Please consult a doctor.");
+            } else {
+                alert("Thank you for completing the survey. Based on your answers, it does not indicate typhoid symptoms. However, if you feel unwell, please see a doctor.");
+            }
+        }
+    </script> -->
+    <footer class="footer">
+        <p>© 2023 SymptoCare. All Rights Reserved.</p>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <a href="index.html">Back to menu</a>
+    <script src="script-analyzer.js"></script>
+</body>
+
+</html>

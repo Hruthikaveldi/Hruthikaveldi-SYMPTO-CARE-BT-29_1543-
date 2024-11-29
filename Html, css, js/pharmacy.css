@@ -1,0 +1,159 @@
+/* Pharmacy Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.pharmacy-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1e3a8a; /* Deep blue for a medical/pharmacy feel */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.alphabet-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.alphabet-nav a {
+    margin: 0.3rem;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    background-color: #4e73df; /* Blue color matching pharmacy branding */
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.alphabet-nav a:hover {
+    background-color: #2e59d9; /* Slightly darker blue on hover */
+}
+
+.content-section {
+    margin-top: 2rem;
+}
+
+#disease-list, #drug-list-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 220px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.item-card:hover {
+    background-color: #fafafa;
+    transform: translateY(-5px); /* Slight hover effect */
+}
+
+button {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: #4e73df;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2e59d9;
+}
+
+#drug-details h3 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+.drug-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.mrp {
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #b91c1c; /* Red for discount strike-through */
+}
+
+.discount {
+    font-size: 1.2rem;
+    color: #2d6a4f; /* Green for discount prices */
+}
+
+#drug-details {
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+button.go-back {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button.go-back:hover {
+    background-color: #218838;
+}
+
+/*EXTRA*/
+#disease-info {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+#disease-info h3 {
+    color: #13118e;
+}
+
+#disease-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}

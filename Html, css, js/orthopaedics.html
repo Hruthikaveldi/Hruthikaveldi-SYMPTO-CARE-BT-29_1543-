@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Orthopaedics Products</title>
+    <link rel="stylesheet" href="orthopaedics-style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="section_container nav_container">
+            <div class="nav__logo">Sympto<span>-Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="symptom.html">SymptomAnalyzer</a></li>
+                <li class="link"><a href="types_of_doctors.html">Specialists</a></li>
+                <li class="link"><a href="article.html">Articals</a></li>
+                <li class="link"><a href="pharma.html">Pharmacy</a></li>
+                <li class="link"><a href="add-to-cart.html">Cart</a></li>
+            </ul>
+        <h1>Top Orthopaedics Products</h1>
+    </header>
+
+    <main class="ortho__container">
+        <!-- Card 1 -->
+        <div class="ortho__card">
+            <img src="images/knee_brace.jpg" alt="Knee Brace">
+            <h4>Knee Brace</h4>
+            <p>Provides support and relieves knee pain.</p>
+            <span class="price">$20.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="ortho__card">
+            <img src="images/orthopaedic_pillow.jpg" alt="Orthopaedic Pillow">
+            <h4>Orthopaedic Pillow</h4>
+            <p>Perfect for neck support and spinal alignment.</p>
+            <span class="price">$15.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="ortho__card">
+            <img src="images/ankle_support.jpg" alt="Ankle Support">
+            <h4>Ankle Support</h4>
+            <p>Reduces swelling and improves ankle stability.</p>
+            <span class="price">$12.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="ortho__card">
+            <img src="images/shoulder_sling.jpg" alt="Shoulder Sling">
+            <h4>Shoulder Sling</h4>
+            <p>Ideal for post-injury shoulder support.</p>
+            <span class="price">$25.49</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="ortho__card">
+            <img src="images/back_support_belt.jpg" alt="Back Support Belt">
+            <h4>Back Support Belt</h4>
+            <p>Provides lumbar support and relieves back pain.</p>
+            <span class="price">$30.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="ortho__card">
+            <img src="images/wrist_splint.jpg" alt="Wrist Splint">
+            <h4>Wrist Splint</h4>
+            <p>Perfect for carpal tunnel syndrome and wrist injuries.</p>
+            <span class="price">$9.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="ortho__card">
+            <img src="images/finger_splint.jpg" alt="Finger Splint">
+            <h4>Finger Splint</h4>
+            <p>Supports and immobilizes injured fingers.</p>
+            <span class="price">$7.49</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="ortho__card">
+            <img src="images/orthopaedic_shoes.jpg" alt="Orthopaedic Shoes">
+            <h4>Orthopaedic Shoes</h4>
+            <p>Designed for foot comfort and support.</p>
+            <span class="price">$50.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="ortho__card">
+            <img src="images/elbow_support.jpg" alt="Elbow Support">
+            <h4>Elbow Support</h4>
+            <p>Relieves tennis elbow pain and provides stability.</p>
+            <span class="price">$14.99</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="ortho__card">
+            <img src="images/orthopaedic_mattress.jpg" alt="Orthopaedic Mattress">
+            <h4>Orthopaedic Mattress</h4>
+            <p>Supports the back and alleviates pressure points.</p>
+            <span class="price">$200.00</span>
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+    </main>
+
+    <script src="orthopaedics-script.js"></script>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(item) {
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${item.name} added to cart!`);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+            button.addEventListener('click', () => {
+                const card = button.parentElement;
+                const item = {
+                    name: card.querySelector('h4').innerText,
+                    price: card.querySelector('.price').innerText,
+                    image: card.querySelector('img').src,
+                };
+                addToCart(item);
+            });
+        });
+    </script>
+</body>
+</html>
